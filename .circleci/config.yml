@@ -25,7 +25,6 @@ jobs:
             sudo pip install awsebcli &&
             sudo pip install --upgrade awsebcli
       - run : eb --version
-      - run : eb init 
       - deploy:
           name: Deploy To ENV Staging
           command: sudo eb deploy docker-cicd-dev
