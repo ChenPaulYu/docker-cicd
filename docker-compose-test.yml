@@ -5,5 +5,3 @@ services:
     image: docker-cicd
     build: .
     command: npm test
-    volumes:
-      - .:/app
