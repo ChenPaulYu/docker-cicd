@@ -16,7 +16,6 @@ jobs:
       - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Install EB Command Line
           command: >
@@ -25,17 +24,12 @@ jobs:
             sudo rm -rf /var/lib/apt/lists/* &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
-      - run: eb --version
-      - run: eb init
-      - deploy: 
-          name: Deploy to AWS EB
-          command: sudo eb deploy docker-cicd-dev
+      - deploy:
+          name: Deploy To ENV Staging
+          command: udo eb deploy docker-cicd-dev
 
 workflows: 
   version: 2 
   docker-cicd: 
     jobs: 
-      - test
-      - deploy:
-          requires:
-            - test
+      - deploy
