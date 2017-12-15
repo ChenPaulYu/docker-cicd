@@ -26,8 +26,8 @@ jobs:
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
       - deploy: 
-        name: Deploy to AWS EB
-        command: eb deploy docker-cicd-dev
+          name: Deploy to AWS EB
+          command: sudo eb deploy docker-cicd-dev
 
 workflows: 
   version: 2 
