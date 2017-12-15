@@ -24,14 +24,6 @@ jobs:
             sudo apt-get install -y python python-dev python-pip python-virtualenv &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade awsebcli
-      - run:
-          name: Setup EB Credentials
-          command: >
-            mkdir -p ~/.aws &&
-            echo [default] >> ~/.aws/credentials &&
-            echo aws_access_key_id = $AWS_ACCESS_KEY_ID >> ~/.aws/credentials &&
-            echo aws_secret_access_key = $AWS_SECRET_ACCESS_KEY >> ~/.aws/credentials
-      - run: eb init      
       - deploy:
           name: Deploy To ENV Staging
           command: sudo eb deploy docker-cicd-dev
