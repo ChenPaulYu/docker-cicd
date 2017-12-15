@@ -25,6 +25,9 @@ jobs:
             sudo rm -rf /var/lib/apt/lists/* &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
+      - run:
+        name: Initial EB
+        command: eb init
       - deploy: 
           name: Deploy to AWS EB
           command: sudo eb deploy docker-cicd-dev
