@@ -24,9 +24,10 @@ jobs:
             sudo rm -rf /var/lib/apt/lists/* &&
             sudo pip install awsebcli &&
             sudo pip install --upgrade --user awsebcli
+      - run: eb init
       - deploy:
           name: Deploy To ENV Staging
-          command: udo eb deploy docker-cicd-dev
+          command: sudo eb deploy docker-cicd-dev
 
 workflows: 
   version: 2 
