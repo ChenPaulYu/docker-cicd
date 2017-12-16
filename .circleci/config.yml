@@ -41,5 +41,6 @@ workflows:
           requires:
             - test
           filters:
+          
             branches:
               ignore: /.*/
