@@ -36,7 +36,10 @@ workflows:
   version: 2 
   docker-cicd: 
     jobs: 
-      - test
+      - test:
+          filters:
+            tags:
+              only: /.*/
       - deploy:
           requires:
             - test
