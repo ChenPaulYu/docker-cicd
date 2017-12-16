@@ -42,4 +42,4 @@ workflows:
             - test
           filters:
             tags:
-              only: /^v(\d+)\.(\d+)\.(\d+)/
+              ignore: /.*/
