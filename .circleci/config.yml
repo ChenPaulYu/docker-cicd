@@ -38,8 +38,8 @@ workflows:
     jobs: 
       - test
       - deploy:
-        requires:
-          - test
-        filters:
-          branches:
-            ignore: /.*/
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v(\d+)\.(\d+)\.(\d+)/
